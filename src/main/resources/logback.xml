@@ -1,0 +1,29 @@
+
+<configuration scan="true" scanPeriod="60 seconds">
+    <!--输入到catelina.out-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern> %d{yyyy-MM-DD HH:mm:ss.SSS} [%thread] %-5level %logger -%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--<logger></logger>-->
+    <!--这个类会根据时间 进行日志的压缩-->
+    <!--<appender name="permission" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<file>${catalina.home}/logs/permission.log</file>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--<FileNamePattern>${catalina.home}/logs/permission.%d{yyyy-MM-dd.log.gz}</FileNamePattern>-->
+        <!--</rollingPolicy>-->
+        <!--<layout class="ch.qos.logback.classic.PatternLayout">-->
+            <!--<pattern> %d{yyyy-MM-DD HH:mm:ss.SSS} [%thread] %-5level %logger -%msg%n</pattern>-->
+        <!--</layout>-->
+    <!--</appender>-->
+
+    <!--<logger name="xxx" level="INFO">-->
+        <!--<appender-ref ref="permission"></appender-ref>-->
+    <!--</logger>-->
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"></appender-ref>
+    </root>
+</configuration>
